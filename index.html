@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hellooo</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="Hola.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <button type="submit" class="btn" onclick="openPopup()">Dale click aquí duh no hay nada más, burro</button>
+  <div class="popup" id="popup">
+    <h2 id="popupTitle">Hello Carlos</h2>
+    <p id="popupText">How are youuu? :) </p>
+    <button type="button" onclick="nextPopup()" id="siguiente" >SIGUIENTEEE</button>
+
+    <button type="button" onclick="closePopup()" id="listo" style="display: none">Okay, byeee</button>
+  </div>  
+</div>
+
+<script>
+  var currentStep = 1;
+  var popupTitle = document.getElementById('popupTitle');
+  var popupText = document.getElementById('popupText');
+
+  function openPopup() {
+    document.getElementById('popup').style.display = 'block';
+  }
+
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+
+  function nextPopup() {
+    if (currentStep === 1) {
+      popupTitle.innerHTML = 'Since we won&rsquo;t see each other in more than two weeks';
+      popupText.innerHTML = '(And I&rsquo;m practicing coding)';
+      siguiente.style.display = 'block';
+      currentStep++;
+    } else if (currentStep === 2) {
+      popupTitle.innerHTML = 'I made you this!';
+      popupText.innerHTML = '(I know it isn&rsquo;t something very sophisticated but shh)';
+      siguiente.style.display = 'block';
+      currentStep++;
+    }
+    else if (currentStep === 3) {
+      popupTitle.innerHTML = 'I hope you are having a nice day';
+      popupText.innerHTML = '(or night, whenever you are reading this)';
+      siguiente.style.display = 'block';
+      currentStep++;
+    }
+    else if (currentStep === 4) {
+      popupTitle.innerHTML = 'I&rsquo;m really happy we met';
+      popupText.innerHTML = 'Ok that is it, I&rsquo;m disgusted with myself for how cheesy that sounds';
+      siguiente.style.display = 'block';
+      currentStep++;
+    }
+    else if (currentStep === 5) {
+      popupTitle.innerHTML = 'By the way,';
+      popupText.innerHTML = 'you should take a bath, stinky';
+      siguiente.style.display = 'none';
+      listo.style.display = 'block';  // Display the "Listo, byeee" button
+      currentStep = 1;
+    }
+  }
+</script>
+
+</body>
+</html>
